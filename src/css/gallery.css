@@ -1,0 +1,126 @@
+/* #region gallery */
+
+
+.gallery {
+    padding: 64px 0px;
+
+}
+
+.gallery .container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.gallery-title {
+    font-family: "Cabin", sans-serif;
+
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #0d0b0a;
+    margin-bottom: 20px;
+}
+
+.gallery-desc {
+    font-family: "Sarabun", sans-serif;
+
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    color: #0d0b0a;
+    margin-bottom: 48px;
+}
+
+
+
+.gallery-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+
+}
+
+.gallery-item {
+    max-width: calc((100% - 24px) / 2);
+}
+
+.gallery-img {
+    border-radius: 16px;
+    width: 100%;
+
+
+
+
+}
+
+@media screen and (min-width: 768px) {
+
+
+    .gallery {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .gallery .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .gallery-title {
+        margin-bottom: 24px;
+    }
+
+    .gallery-desc {
+        margin-bottom: 80px;
+    }
+
+
+    .gallery-item {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+
+    .gallery-img {
+
+
+        height: 291px;
+
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 1336px) {
+
+
+    .gallery {
+        padding-top: 112px;
+        padding-bottom: 112px;
+    }
+
+    .gallery .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .gallery-desc {
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .gallery-item {
+        flex-basis: calc((100% - 48px) / 3);
+    }
+
+    .gallery-img {
+
+
+        height: 448px;
+
+        object-fit: cover;
+    }
+}
+
+/* #endregion gallery */

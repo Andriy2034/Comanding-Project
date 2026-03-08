@@ -1,0 +1,277 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.header {
+  height: 64px;
+  background-color: #f2fafa;
+}
+.header-container {
+  background-color: #f2fafa;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px;
+  height: 100%;
+  position: relative;
+}
+.header-nav {
+  display: none;
+}
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  font-family: "Sarabun", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #0d0b0a;
+    display: inline-block;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background: rgba(13, 11, 10, 0.5);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.join-btn:hover,
+.join-btn:focus-visible {
+  opacity: 0.5;
+}
+.nav-link--current::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.header-logo,
+.menu-logo {
+  width: 84px;
+  height: 36px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-logo .icon-logo,
+.menu-logo .icon-logo {
+  width: 84px;
+  height: 36px;
+  display: block;
+}
+
+
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #c2d9fc;
+  border: 1px solid #c2d9fc;
+  border-radius: 100px;
+
+  font-family: "Sarabun", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #0d0b0a;
+
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 1;
+}
+.join-btn--menu {
+  padding: 4px 20px;
+    width: 105px;
+    height: 34px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.join-btn--header {
+  padding: 4px 20px;
+  height: 34px;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: #f2fafa;
+
+  padding: 0;
+  transition: transform 300ms ease;
+  transform: translateX(-100%);
+  z-index: 1000;
+}
+
+.menu-open-btn {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ .mobile-menu.is-open {
+  transform: translateX(0);
+ }
+  
+.mobile-menu-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 160px;
+  margin: 0;
+}
+
+.menu-close-btn {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  margin: 0;
+}
+.menu-close-btn svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: #0d0b0a;
+}
+
+.mobile-menu-header {
+  position: relative;
+  height: 64px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.mobile-nav {
+  flex: 1;
+  padding-top: 16px;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: block;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-nav-link {
+  display: block;
+
+  font-family: "Sarabun", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #0d0b0a;
+  padding: 0 12px;
+  text-decoration: none;
+}
+.join-btn--mobile {
+  width: 100%;
+  height: 46px;
+  padding: 10px 24px;
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+/*---modal--*/
+section.modal-background {
+  display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 72px;
+  }
+  .header-container {
+    padding: 0 32px;
+  }
+  .join-btn--header {
+    height: 42px;
+    padding: 8px 20px;
+  }
+  .join-btn--mobile {
+    width: 204px;
+    height: 46px;
+    padding: 10px 24px;
+  }
+  .mobile-menu-container {
+    padding: 0 32px 160px;
+  }
+  .mobile-nav {
+    max-width: 704px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1336px) {
+  .menu-open-btn , 
+  .mobile-menu {
+    display: none;
+  }
+  .header {
+    height: 72px;
+  }
+  .header-container {
+    padding: 0 12px;
+    display: flex;
+  }
+  .header-nav {
+    display: block;
+  }
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+ .join-btn--header {
+  width: 105px;
+  height: 42px;
+ }
+}

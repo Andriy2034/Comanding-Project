@@ -1,0 +1,239 @@
+.yoga {
+  padding-bottom: 64px;
+  padding-top: 64px;
+}
+
+.container-title {
+  max-width: 343px;
+  margin: 0 auto;
+}
+
+.images-yoga {
+  margin-bottom: 24px;
+  border-radius: 16px;
+}
+
+.yoga-paragraf {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #0d0b0a;
+  margin-bottom: 12px;
+}
+
+.yoga-title {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #0d0b0a;
+  margin-bottom: 20px;
+  max-width: 343px;
+}
+
+.yoga-title-tab {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #0d0b0a;
+  display: none;
+}
+
+.description {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+  color: #0d0b0a;
+}
+
+.list {
+  width: 100%;
+  max-width: 343px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.box-img-text {
+  width: 100%;
+}
+
+.box-title {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #0d0b0a;
+  margin-bottom: 20px;
+}
+
+.box-text {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  color: #0d0b0a;
+}
+
+.box-join {
+  margin-top: 48px;
+}
+
+.box-link-join {
+  border: 1px solid #c2d9fc;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 343px;
+  height: 46px;
+  background: #c2d9fc;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.box-link-join:hover {
+  opacity: 0.5;
+}
+
+.text-join {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #0d0b0a;
+}
+
+@media only screen and (min-width: 768px) {
+  .yoga {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  .container-title {
+    max-width: 704px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .yoga-paragraf {
+    margin-bottom: 16px;
+  }
+
+  .yoga-title {
+    max-width: 704px;
+    margin-bottom: 24px;
+    font-size: 38px;
+    display: none;
+  }
+
+  .yoga-title-tab {
+    display: block;
+    margin-bottom: 24px;
+    justify-content: center;
+  }
+
+  .destruction {
+    display: none;
+  }
+
+  .box-img-text {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .box-title {
+    margin-bottom: 0;
+  }
+
+  .list {
+    max-width: 704px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 27px 24px;
+    margin-top: 40px;
+  }
+
+  .images-yoga {
+    margin-bottom: 16px;
+  }
+
+  .box-tab {
+    grid-column: span 2;
+  }
+
+  .title-text {
+    padding-bottom: 21px;
+  }
+
+  .box-join {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .box-link-join {
+    width: 100%;
+    max-width: 140px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1336px) {
+  .yoga {
+    padding-bottom: 112px;
+    padding-top: 112px;
+  }
+
+  .container-title {
+    max-width: 768px;
+  }
+
+  .yoga-title {
+    max-width: 768px;
+    font-size: 52px;
+    display: block;
+  }
+
+  .yoga-title-tab {
+    display: none;
+  }
+
+  .title-text {
+    padding-bottom: 0;
+  }
+
+  .images-yoga {
+    margin-bottom: 32px;
+  }
+
+  .list {
+    max-width: 1312px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .box-tab {
+    grid-column: auto;
+  }
+
+  .box-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+}
