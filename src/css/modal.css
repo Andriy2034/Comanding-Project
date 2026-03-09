@@ -1,229 +1,179 @@
-.modal-background {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    display: none;
+.modal-overlay {
+  background-color: rgba(46, 47, 66, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .modal {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    column-gap: 16px;
-    background-color: #DFEBEB;
-    margin: 0 16px;
-    justify-content: center;
-    align-items: center;
+  background-color: #dfebeb;
+  box-shadow:
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 288px;
+  min-height: 623px;
+  padding: 64px 16px 24px 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal-close {
-     position: absolute;
-     top: 16px;
-     right: 16px;
-     border: none;
-     background: none;
- }
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .modal-close:hover,
 .modal-close:focus {
-     opacity: 0.5;
- }
-
-.modal-close:active {
-     opacity: 0.3;
- }
-
-.modal-content {
-     display: flex;
-     flex-direction: column;
-     margin-bottom: 32px;
- }
-
-.modal-title {
-     font-family: "Cabin", sans-serif;
-     font-weight: 400;
-     font-size: 40px;
-     line-height: 1.2;
-     letter-spacing: 0.01em;
-     text-align: center;
-     color: #0D0B0A;
-     justify-content: center;
-     display: flex;
-     margin-top: 64px;
-     margin-bottom: 32px;
- }
-
-.modal-subtitle {
-     font-family: "Cabin", sans-serif;
-     font-weight: 400;
-     font-size: 18px;
-     line-height: 1.4;
-     letter-spacing: 0.01em;
-     text-align: center;
-     color: #0D0B0A;
-     padding-bottom: 8px;
- }
-
-.modal-price {
-     font-family: "Cabin", sans-serif;
-     font-weight: 400;
-     font-size: 44px;
-     line-height: 1.2;
-     letter-spacing: 0.01em;
-     text-align: center;
-     color: #0D0B0A;
- }
-
-
-.modal-form {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     row-gap: 24px;
- }
-
-.modal-form-list {
-     display: flex;
-     flex-direction: column;
-     row-gap: 24px;
- }
-
-.modal-form-item {}
-
-.modal-form-title {
-     font-family: "Sarabun", sans-serif;
-     font-weight: 400;
-     font-size: 16px;
-     line-height: 1.6;
-     color: #0D0B0A;
- }
-
-.modal-form-input {
-     border: 1px solid var(--opacity-transparent);
-     border-radius: 12px;
-     padding: 8px 12px;
-     width: 343px;
-     height: 42px;
- }
-
-.modal-form-input:focus::placeholder,
-.modal-form-input:active::placeholder {
-     color: transparent;
- }
-
-.modal-form-input::grammar-error {
-     border-color: red;
- }
-
-.modal-form-button {
-     border: 1px solid #C2D9FC;
-     border-radius: 100px;
-     padding: 10px 24px;
-     width: 343px;
-     height: 46px;
-     background-color: #C2D9FC;
- }
-
-.modal-form-button:hover,
-.modal-form-button:focus {
-     opacity: 0.5;
- }
-
-.modal-form-button:active {
-     border: 1px solid #C2D9FC;
-     border-radius: 100px;
-     background-color: transparent;
- }
-
-.is-open {
-     display: block;
- }
-
-@media (min-width: 768px) {
-
-    .modal-background {
-        background: rgba(0, 0, 0, 0.25);
-        display: flex;
-        position: fixed;
-            justify-content: center;
-            align-items: center;
-    }
-
-    .modal {
-        border-radius: 16px;
-        width: 704px;
-        height: 573px;
-        max-width: none;
-        margin: 0;
-    }
-
-    .modal-form-list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        column-gap: 16px;
-        row-gap: 24px;
-        padding-left: 92px;
-         padding-right: 92px;
-    }
-
-    .modal-form-item {
-        width: 100%;
-    }
-
-    .modal-form-item:not(:first-child) {
-        width: calc((100% - 16px) / 2);
-
-    }
-
-    .modal-form-input {
-        width: 100%;
-        height: 42px;
-    }
-
-
-    .modal-form-button {
-        border-radius: 100px;
-        padding: 10px 24px;
-        width: 155px;
-        height: 46px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.6;
-        padding: 0;
-    }
+  background-color: rgba(13, 11, 10, 0.05);
 }
 
-@media (min-width: 1336px) {
+.modal-text {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #0d0b0a;
+  margin-bottom: 32px;
+}
 
-    .modal-background {
-        background: rgba(0, 0, 0, 0.25);
-        display: flex;
-        position: fixed;
-        justify-content: center;
-        align-items: center;
-    }
+.modal-text-wrapper {
+  margin-bottom: 32px;
+}
 
-    .modal {
-        border-radius: 16px;
-        width: 768px;
-        height: 573px;
-    }
+.text-one {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #0d0b0a;
+  margin-bottom: 8px;
+}
 
-    .modal-form-list {
-        padding-left: 64px;
-        padding-right: 64px;
-    }
+.text-prise {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #0d0b0a;
+}
 
-    .modal-form-input {
-        width: 100%;
-        height: 42px;
+.modal-form {
+  display: block;
+}
 
-    }
+.modal-form-modern {
+  margin-bottom: 24px;
+}
 
-     
+.modal-form-modern:last-child {
+  margin-top: 24px;
+}
+
+.lable-modal {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #0d0b0a;
+}
+
+.modal-wrapper {
+  margin-top: 8px;
+}
+
+.input-text {
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 12px;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  padding: 8px 12px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-text::placeholder {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(13, 11, 10, 0.6);
+}
+
+.input-text:focus {
+  border: 1px solid #4d5ae5;
+}
+
+.input-text:focus + .modal-icon {
+  fill: #4d5ae5;
+}
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.modal-send-button {
+  display: flex;
+}
+
+.modal-send {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #0d0b0a;
+  background-color: #c2d9fc;
+  border: 1px solid #c2d9fc;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 343px;
+  height: 46px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-send:focus {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: rgba(13, 11, 10, 0.05);
+}
+
+.modal-send:hover {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: rgba(13, 11, 10, 0.05);
 }
